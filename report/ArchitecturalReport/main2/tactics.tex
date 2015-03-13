@@ -1,0 +1,64 @@
+\label{tactics}
+To achieve the desired quality attributes one can apply tactics. Tactics are design options that can be taken to achieve qualities. In this chapter we will present tactics for the quality attributes we focus on -- modifiability, testability and usability.
+
+\subsection{Modifiability}
+The modifiability attribute addresses how easy it is to make changes to a system. The main concern is how much a change is going to cost in terms of extra work needed to be done to make this change functional. A change scenario consists of the following factors:
+
+\begin{itemize}
+	\item Source - the person that wants to make the change
+	\item Stimulus - the change the source wants to perform
+	\item Artifact - what the source wants to change
+	\item Environment - when this change shall be performed
+	\item Response - what response
+	\item Response measure - how much this change will cost, in regards to money and elements affected
+\end{itemize}
+
+After this has been specified one has to design, implement, test and deploy the change. In regards to this the extent of modifiability will determine how much this operation will cost. By employing the following tactics one can increase the modifiability: 
+
+\begin{itemize}
+	\item Localizing changes - divide the responsibilities to modules during design so changes will be limited to that module
+        \begin{itemize}
+	\item Generalize the module - make the module able to provide more functions based on different inputs by making it more generalized. This can for example be achieved by using the Abstract Factory pattern
+	\item Minimize dependencies - if modules are less dependent of each other, they will not be as affected by changes
+	\end{itemize}
+	\item Single responsibility principle - make one module responsible for one function. If it is responsible for more than one function, divide the module into several classes, with one responsibility for each class
+	\item Clean code - write the implementation in clean code, which is easy to understand and unambiguous
+	\item Prevention of ripple effects - prevent changes on one module from affecting the entire system.
+        \begin{itemize}
+	\item Hide information - use encapsulation to keep information in different modules invisible to each other
+        \end{itemize}
+\end{itemize}
+
+
+\subsection{Testability}
+The testability attribute concerns how easy the system is to test and how much the testing process will cost. Testing is usually a big resource drain, but at the same time such a crucial part of the system creation process that it cannot be neglected. The key is to make testing less expensive by ensuring good testability for the system. The goal of the testability tactics is to make a system testable, by making it possible to control the internal states and inputs of the components and observe the outputs \cite{bass2003software}. Tactics one can employ to achieve good testability are: 
+
+\begin{itemize}
+	\item Input/Output handling
+        \begin{itemize}
+	\item Separate the different types of components - keep components such as logic, view, models separate which will make writing tests for specific parts much easier. Separation of interfaces from the system will make testing by code insertion possible without affecting the whole system.
+	\item Keeping classes at low complexity - smaller classes will also make the test classes smaller and easier to write. Makes testing of specific parts of the system easy.
+	\item Console output - write outputs to the console to check if modules give the expected results.
+	\end{itemize}
+ 
+	\item Internal monitoring
+        \begin{itemize}	
+        \item Employ logging - makes it possible to observe the inputs and outputs of components so one can check after a test if it has been performed as expected.
+        \end{itemize}
+\end{itemize}
+
+
+\subsection{Usability}
+Usability describes how easy and user friendly the system is the for the end user. Any system which has an end-user as a stakeholder should take usability into consideration. The importance of usability depends on how important the end-user is for the system. Usability tactics can be divided into two types, to support two categories of users. The first category is called runtime and includes those that support the user during system execution. The second category is design-time and supports the interface developers.\cite{bass2003software} For runtime the follow tactics are provided:
+
+\begin{itemize}
+	\item Abstract errors from the user - abstract error messages from the user interface in such a way that the user never knows if anything went wrong, in cases the error is fixed without any problems.
+	\item Maintain models - the application should maintain models of the task, the user and the system, to make handling events easier by keeping the interacting parts separate.
+\end{itemize}
+
+Design-time tactics are:
+
+\begin{itemize}
+	\item Separate the user interface from the rest of the application - one can apply an architectural pattern such as MVC to separate the GUI modules from the logic. This will make changes to the user interface easier to implement.
+\end{itemize}
+

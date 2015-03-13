@@ -1,0 +1,44 @@
+In this section we will give a description of the diagrams created as a representation of our selected architectural viewpoints. As mentioned in the previous section we focus on the logical and development viewpoints, and these will be represented with a class diagram and a package diagram, respectively -- to be found in the appendix of this report.
+
+\subsection{Logical View}
+
+The logical view is illustrated by the class diagram in figure \ref{fig:classdiagram}. This diagram tries to illustrate the logic between the most essential classes in the system, and the relationships between them. 
+
+The Game and TowerDefenseState instances are constructed in the PlayActivity. The Game object holds a stack of game states, and the TowerDefenseState is pushed onto this stack. It is the only state of the game. There is also a MenuActivity (not shown in the class diagram for simplicity), which is a simple menu showed in the GUI, with buttons to initialize the game. When the game is initialized, the control is passed over to the PlayActivity.
+
+The system is focused around various classes with "controller" as postfix, initially for convention in regards to the MVC-pattern. 
+These classes have different levels of responsibility for handling input and initiating response for the inputs.
+
+The TowerDefenseState-class extends the class State (from the Sheep-framework) and behaves as the top controller of the system. It's responsibilities include invoking the draw and update methods on it's super-object (State), as well as all the subcomponents displayed on the screen. The components which contains draw and update methods are, in particular, the Sprite-objects (towers and enemies).
+
+The GameController-class is, as it's name implies, responsible for handling the flow of the game. It decides when a new wave of enemies should be spawn, as well as when towers should shoot at enemies.  
+
+WaveController handles the waves of enemies, through Wave-objects -- which contains information of a particular wave. The WaveController decides which wave should be spawned next.
+
+SpriteFactory is responsible for producing Sprites-objects, both EnemySprite and TowerSprite. A TowerSprite needs a model for it to be instantiated. The model decides the uniqe properties of a particular tower. 
+
+
+\subsection{Development View}
+Figure \ref{fig:packagediagram} illustrates a package diagram showing the development view of the system. The diagram illustrates the most essential packages and their components.
+
+As mentioned in the previous section, some of the naming conventions relates to the MVC-pattern and this is also a case in regards to the package-names. The MVC-pattern is not fully implemented in the system, something which we will elaborate more in later sections, however it seemed natural with this naming convention nevertheless.
+
+The controller package could also be named the "core" package in system. Components in this packages are responsible for initiating and controlling the flow of the game. Included in these components are action- and eventlisteners, registering input and events occuring during gameplay.
+
+The view package includes the sprite-components -- which in turn contains functionality for drawing dynamic objects on the screen. In addition, a component for creating such sprites is also included in this package.
+
+We try to seperate business logic into the model-package. For instance, the path of an enemy sprite is computed in the EnemyPath-class in the "model.game"-package. 
+
+The COTS libraries, Android SDK and the Sheep framework, are also illustrated in the diagram, showing the dependencies drawn from these.
+
+It should be worth mentioning that we try to keep in mind the Single-responsibility principle, in which a class should have only one responsibility. In turn, packages should also have one main area of responsibility. However, in some cases this principle was not entirely maintained as is the case in the controller-package. The area of responsibility in this package includes both the controlling of inputs and the actual gameflow. 
+
+It should also be noted that when stating that a component is the "heart" of a system, we are in danger of creating so-called "God"-classes which has too much responsibility. It can be argued that our architecture is in danger of this problem when declaring the "controller"-package as the core module of the system. However, responsibility within this package is delegated into several sub-components, with no component having too much responsibility. This can perhaps be argued on the basis of lines of code, in which no class in the package has more than 400 lines.
+
+
+
+\subsection{Consistency among views}
+
+The logical view presents the individual classes of the system, and the relationship between them. In the development view, we present a more overall view of the architecture by including packages.
+
+The consistency between the views is maintained by including the classes in the logical view as compononents in a package, in the development view. Relationships between classes in the logical view is also maintained by having the same relationships between the relevant packages in the development view. 

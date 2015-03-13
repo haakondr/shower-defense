@@ -1,0 +1,21 @@
+\label{drivers} The architectural drivers are the major quality attribute goals which shape the architecture of the system \cite{bass2003software}.These are contributing factors which help decide on the architectural tactics for the system.  In order to determine the drivers, one need to first identify the business goals of the system, then transform these goals into quality scenarios or use cases. 
+
+Architectural decisions mainly focus on avoiding unnecessary complexity. The drivers are based on the use cases which will cause the highest complexity, while being of high importance in order to achieve the business goals.
+
+The chosen architectural drivers for this project are:
+\begin{enumerate}
+	\item Enemies will come streaming towards the goal, and the player shall stop them before they arrive.
+	\item Towers can be upgraded.
+	\item The game consists of several waves (level) of enemies.
+	\item The player should be able to build new towers at all times.
+	\item The system needs to be generic and dynamic in order to grant the player freedom, and provide variation in gameplay.
+	\item The system should have a self explanatory user interface, and allow the player instant action.
+\end{enumerate}
+
+Quality attributes required for these drivers:
+
+\begin{itemize}
+	\item Modifiability (all) - various types of enemies, towers and wave compositions require high modifiability in the system.
+	\item Testability (5) - A generic and dynamic system will have many execution paths, which may cause bugs if not tested properly. Due to this, the testability quality attribute is highly valued.  
+	\item Usability (6) - The end users of the system do probably not have computer knowledge, and satisfying the customer is the main business goal of the system. Therefore, the system require a certain amount of usability.
+\end{itemize}

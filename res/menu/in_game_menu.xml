@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/zoom_in"
+          android:icon="@drawable/btn_plus_default"
+          android:title="@string/zoom_in" />
+    <item android:id="@+id/zoom_out"
+          android:icon="@drawable/btn_minus_default"
+          android:title="@string/zoom_out" />
+</menu>

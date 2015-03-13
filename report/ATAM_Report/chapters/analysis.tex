@@ -1,0 +1,68 @@
+This section will cover the analysis of the most relevant scenarios in the system. The scenarios chosen are the scenario \# 4 and \# 5 of the evaluated groups scenarios from their report. In each scenario we evaluate the different architectural descisions related to the scenario. 
+
+
+Scenario \# 4 describes the scenario where the system is adding more helicopters for soldiers. The system response of this scenario is described in the documentation as it should not affect other funcionality occuring at the same time.
+
+\begin{table}[h]
+  \begin{tabularx}{400pt}{|l|l|l|l|l|}
+    \hline
+    \multicolumn{5}{|l|}{\textbf{Analysis of Architectural Approach}}\\
+    \hline
+    \multicolumn{1}{|l|}{\textbf{Scenario \#:}4} & \multicolumn{4}{|l|}{\textbf{Scenario:}Adding helicopters} \\
+    \hline
+    \multicolumn{5}{|l|}{\textbf{Attribute(s):} Modifiability} \\
+    \hline
+    \multicolumn{5}{|l|}{\textbf{Environment:}Design time} \\
+    \hline
+    \multicolumn{5}{|l|}{\textbf{Stimulus:}Wishes to add helicopters for the soldiers} \\
+    \hline
+    \multicolumn{5}{|l|}{\textbf{Response:} Should not affect other functionality} \\
+    \hline
+    \textbf{Architectural Decisions} & \textbf{Sensitivity} & \textbf{Tradeoff} & \textbf{Risk} & \textbf{Nonrisk} \\
+    & & & & \\
+    \hline 
+    Polymorphism & & T1 & R1 &  \\
+    \hline
+    MVC & S1 & & & N1 \\
+    \hline
+    Abstract Factory & S2 & & R2 & \\
+    \hline
+    \multicolumn{5}{|X|}{\textbf{Reasoning:}Since the MVC pattern focuses on separating the logic from user interface functionality, an operation should be limited to one part of the system only. The decision to use polymorphism was made by the evaluated group, and we decided to leave it in the report, even though we do not agree that this is an architectural decision. Polymorphism and abstract factory pattern can be used within the model, and thus also provide the desired system response. The scenario is essential for gameplay and thus general entertainment value.} \\
+    \hline
+    \hline
+  \end{tabularx}
+\caption{Analysis of scenario \# 4}
+\end{table} 
+
+\clearpage
+Scenario \# 5 describes the testing of a completed class. In this scenario there is also a response measure which indicates that 75\% of the executable statements should be executed.
+The response of the system should be that a test can control input and observe the output of the given class.
+\begin{table}[h]
+  \begin{tabularx}{400pt}{|l|l|l|l|l|}
+    \hline
+    \multicolumn{5}{|l|}{\textbf{Analysis of Architectural Approach}}\\
+    \hline
+    \multicolumn{1}{|l|}{\textbf{Scenario \#}: 5} & \multicolumn{4}{|l|}{\textbf{Scenario:} Testing scenario} \\
+    \hline
+    \multicolumn{5}{|l|}{\textbf{Attribute(s):} Testability} \\
+    \hline
+    \multicolumn{5}{|l|}{\textbf{Environment:} Design time} \\
+    \hline
+    \multicolumn{5}{|l|}{\textbf{Stimulus:} Class completed} \\
+    \hline
+    \multicolumn{5}{|l|}{\textbf{Response:} Test can control input and observe output of the class.} \\
+    \hline
+    \textbf{Architectural Descisions} & \textbf{Sensitivity} & \textbf{Tradeoff} & \textbf{Risk} & \textbf{Nonrisk}\\
+     & & & & \\
+    \hline 
+    Dependency injections & S3 & & & N2  \\
+    \hline
+    MVC & S4 & & & N3 \\
+    \hline
+    \multicolumn{5}{|X|}{\textbf{Reasoning:}The scenario is chosen due to it's focus on maintaining the overall quality and availability of the system. The dependecy injection tactic provides the ability to test the system under different states, thus covering the availability attribute.
+    MVC offers the possibility to test individual components of the system. Continous unit-testing may increase quality by assuring that all logic passes unit testing.} \\
+    \hline
+  \end{tabularx}
+  \caption{Analysis of scenario \#5}
+\end{table}
+

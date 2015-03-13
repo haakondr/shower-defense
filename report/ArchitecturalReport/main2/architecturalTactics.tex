@@ -1,0 +1,22 @@
+\label{tactics}
+
+\subsection{Modifiability}
+
+The first tactic we would use in regards to modifiability is to use the Model-View-Controller (MVC) architectural pattern. Because we use this
+pattern we ensure a loose coupling between the different modules of the product,s which makes it easy to modify a single part of the system. In
+addition, this tactic will help us to prevent ripple effect which can occur when
+modules are being changed. By having loosely coupled modules and localized
+changes other parts of the system would not be affected if we change a module.
+We should also try to minimize the complexity of each module by keeping them
+small.
+
+\subsection{Testability}
+The MVC-tactic would also help us ensure good testability. If the
+modules are loosely coupled and low in complexity it should be easy to test
+specific parts of the system without having to test a lot of extra functionality
+in addition. This allows us to write small test modules which can easily be
+modified. We will also make sure that we can control and observe both the inputs
+and outputs of the components we test.
+
+Usability - In regards to usability the MVC-tactic will make the user interface
+separate from the rest of the application. We create individual models for different parts of the system, such as the players towers and the enemies. This would allow more customization of the models for the user.

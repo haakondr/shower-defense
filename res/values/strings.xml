@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World!</string>
+    <string name="app_name">Warcraft TD</string>
+    <string name="howto">The point of the game is to survive all the waves of enemies that come. To defend yourself, you have to build towers. To build towers press and hold your finger at the desired location. This brings up the tower menu, which shows the different towers you can buy. Towers you have enough money to buy will be shown with color. If you don’t have enough the tower will be grayed out. Each wave consists of a group of mobs that you are to kill. If a mob gets through your defenses, you will lose one life. In total you have %1$d lives, and if this amount depletes, you have lost the game. To move around the map you can hold a location and drag it away from where you want to go. To zoom in or out, you can use pinch zoom with two fingers.</string>
+    <string name="credits">This game was made as a student project for the course TDT 4240 - Sowftware Architecture, at Norwegian University of Technology and Science. 
+\n\n
+The participants of the group were:
+\n
+Håvard Geithus
+\n
+Nicolai Meltveit
+\n
+Hallvard Andreas Eriksen
+\n
+Håkon Drolsum Røkenes
+\n
+Sondre Løberg Sæter</string>
+    <string name="zoom_out">Zoom out</string>
+    <string name="zoom_in">Zoom in</string>
+    <string name="map_layer_name">Ground</string>
+    <string name="object_layer_name">Objects_td</string>
+    <string name="spawn_area">spawn</string>
+    <string name="goal_area">exit</string>
+    <string name="walkable_area">walkable_</string>
+    <string name="mapobject_type_waypoint">waypoint</string>
+    <string name="mapobject_type_area">area</string>
+    <string name="create_tower">Create Tower</string>
+    <string name="piercing_tower">Axe Thrower</string>
+    <string name="slowing_tower">Demon</string>
+    <string name="air_tower">Death Knight</string>
+    <string name="splash_tower">Catapult</string>
+    <string name="btn_submitScore">Submit Score</string>
+</resources>

@@ -1,0 +1,62 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[titles]{tocloft}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib} % eksempel til sitering: \cite{bass2003software}. referanser legges i ref.bib. Etter å ha oppdatert ref.bib må bibtex ImplementationDocument.aux kommando kjøres. 
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{algorithmic}
+
+%\usepackage{amssymb,amsmath}
+
+
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\title{\textbf{Action Hero Defense}\\\HRule\\Architectural Description\\ Group 23}
+\author{\and Håvard Geithus
+	\and  Sondre Løberg Sæter 
+	\and Nicolai Meltveit 
+	\and Hallvard Andreas Eriksen 
+	\and  Håkon Drolsum Røkenes}
+\date{\today}
+
+\begin{document}
+
+%\maketitle
+
+\input{./title.tex}
+\renewcommand\thepage{}
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+
+\renewcommand\thepage{\arabic{page}}
+\setcounter{page}{1}
+\section{Introduction}
+\input{main/introduction}
+
+\section{Design Details}
+\input{main/design}
+
+\section{User Manual}
+\input{main/userManual}
+
+\section{Test Report}
+\input{main/testReport}
+
+\section{Relationship with the architecture}
+\input{main/architecturalRelationship}
+
+\section{Issues}
+\input{main/issues}
+
+\section{Points Learned}
+\input{main/pointslearned}
+
+\appendix
+\input{appendix}
+
+\bibliographystyle{plain}
+\bibliography{ref}
+\end{document}

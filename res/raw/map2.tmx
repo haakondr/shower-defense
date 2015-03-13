@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="21" height="23" tilewidth="32" tileheight="32">
+ <tileset name="wc2" firstgid="1" tilewidth="32" tileheight="32" spacing="1">
+  <image source="wc2_tileset.png"/>
+ </tileset>
+ <layer name="Ground" width="21" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAALWUwWoCQQxAE+rJi1CheLEnpaj9l16ktR9QZ5aiiHpTbxWkpd9aCgXprQnNYjY747p2e3iMEzJvwyTOGwBsFC8F+6L4O7EmEgR4qgBH7Mh3g3muTO51ICeWz847zDIiWoRXeR1iiPlc5lHytbOJB7qSF3JyvI3xfO3cyn16dbYld+ONU5+Nxdk5hd/fScmzpzjLnI3V7//gdEKVdf6H85z77GN2pm8j8cGJzgcMz3aMYYHzErMzbWfbznxKI+LU/xvdB9sLZ/LGZm/rZIDY01KXNdRfJy6vnN449bdrxIKYEd+Q7+/YYN+7tXKm3gvxzQPOHh5/81Ksk+tcEhPjvC8xC9b5Sfsv4QOOz0MM7bQ9PYdE9d1hsdvOm47xyu/linyvxHOFsO8HuFiOi4wHAAA=
+  </data>
+ </layer>
+ <objectgroup name="Objects_td" width="0" height="0" opacity="0.97">
+  <object name="walkable_1" type="area" x="0" y="64" width="32" height="96"/>
+  <object name="walkable_2" type="area" x="32" y="32" width="608" height="672"/>
+  <object name="walkable_3" type="area" x="640" y="544" width="32" height="96"/>
+  <object name="1" type="waypoint" x="128" y="96" width="32" height="32"/>
+  <object name="5" type="waypoint" x="320" y="96" width="32" height="32"/>
+  <object name="4" type="waypoint" x="512" y="96" width="32" height="32"/>
+  <object name="2" type="waypoint" x="128" y="384" width="32" height="32"/>
+  <object name="3" type="waypoint" x="512" y="384" width="32" height="32"/>
+  <object name="6" type="waypoint" x="320" y="576" width="32" height="32"/>
+  <object name="exit" type="area" x="640" y="544" width="32" height="96"/>
+  <object name="spawn" type="area" x="0" y="64" width="32" height="96"/>
+ </objectgroup>
+</map>

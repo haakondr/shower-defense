@@ -1,0 +1,19 @@
+\label{sec:changes}In this section we will present a list of changes in our architecture. The main changes where regarding the use of architectural- and design patterns which we will focus on in this section. 
+
+Class- and package diagrams where also changed, in some cases as a consequence of omitting the planned patterns. Some of the changes in the diagrams also reflects unforeseen aspects discovered during development.
+
+\subsection{MVC-pattern}
+
+As described in section \ref{sec:issues}, we had trouble implementing the MVC-pattern as originally planned. The MVC-principle where removed from the architecture, with the exception of Tower-management.  
+
+It soon became clear that the MVC-pattern was not suitable for all areas of the game. Some areas of the game could not so easily be split into separate MVC-structures, as not all of the functionality touches the user interface. We had in mind that the MVC pattern would mainly be implemented in relation to the Sprites shown on the screen, in which the Sprites would represent the view -- the graphics displayed on the screen. Logic concerning these sprites would be manipulated in the corresponding model classes and controlled through user input recieved in controller-classes.
+
+The change in the architecture resulted in only implementing MVC for the TowerSprites. Initially we also wanted to implement this for the EnemySprites, but since the enemies is spawned in a large number of instances, a model-structure would provide a lot of duplicate code.
+
+\subsection{Abstract Factory}
+
+Similar to the MVC, this pattern proved unneccesary to implement following the original design. The pattern is implemented in the creation of TowerModels, however it was also originally planned to implement the pattern for all Sprite-objects. 
+
+The approach was removed for Sprite-creation due to the discovery of a more simple solution. A simple factory, responsible for creating both Tower and Enemy-sprites was created, and the abstract aspect of it was omitted.  
+
+

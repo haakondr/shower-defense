@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/createTowerDialog" android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
+	<TableLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_centerInParent="true">
+		<TableRow>
+			<LinearLayout android:id="@+id/layout_axeThrower"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:orientation="vertical" android:layout_margin="20px"  android:paddingTop="10px">
+				<ImageView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:src="@drawable/axethrower1"
+					android:id="@+id/img_axethrower_tower" android:layout_gravity="center" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:text="@string/piercing_tower"
+					android:layout_gravity="center" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_gravity="center" 
+					android:id="@+id/text_axeThrower_cost"/>
+
+			</LinearLayout>
+		
+			<LinearLayout android:id="@+id/layout_deathknight_tower"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:orientation="vertical" android:paddingTop="10px"
+				android:layout_margin="20px">
+				<ImageView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:src="@drawable/dk1"
+					android:id="@+id/img_deathknight_tower" android:layout_gravity="center" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:text="@string/air_tower"
+					android:layout_gravity="center" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_gravity="center" 
+					android:id="@+id/text_deathKnight_cost"/>
+					
+			</LinearLayout>
+		
+		</TableRow>
+		<TableRow>
+			<LinearLayout android:id="@+id/layout_demon"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingTop="10px"
+				android:orientation="vertical" android:layout_margin="20px" >
+				<ImageView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:src="@drawable/demon1"
+					android:id="@+id/img_demon_tower" android:layout_gravity="center" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:text="@string/slowing_tower"
+					android:layout_gravity="center" />	
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_gravity="center" 
+					android:id="@+id/text_demon_cost"/>
+					
+			</LinearLayout>
+			<LinearLayout android:id="@+id/layout_catapult_tower"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:orientation="vertical" android:paddingTop="10px" 
+				android:layout_margin="20px">
+				<ImageView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:src="@drawable/catapult1"
+					android:id="@+id/img_catapult_tower" android:layout_gravity="center" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:text="@string/splash_tower"
+					android:layout_gravity="center" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_gravity="center" 
+					android:id="@+id/text_catapult_cost"/>
+					
+			</LinearLayout>
+
+
+		</TableRow>
+	</TableLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,18 @@
+Software architecture is complex, and require a lot of details. In order to  describe the entire architecture of the software made in this project, separating the architecture into different views is a necessity. An architectural view is a description of the architecture as seen from different stakeholders. 
+
+ One view model to use is the 4+1 View Model, which contains the four views: logical, development, process and physical view. An additional view is the scenario view, which is redundant with the other views, but provide an overview over the needed components in the other views. The scenarios describe the system through the use of use cases, and is basically an abstraction of the most important requirements specified in the functional requirements.  The architectural drivers described in section \ref{drivers} are based on the scenario view.
+ 
+ The architecture in this project will mainly be based off the logical and development views, and we will now present our reasoning behind these choices.
+
+\subsection{Logical View}
+The logical view is a module view. It is concerned with the functionality the system delivers to the end-user. The reason for choosing the logical view is pretty obvious; the end-user is the main stakeholder for the project, and providing the required functionality determines the success of the product.
+
+There are two approaches on how to represent the logical view, object oriented or data driven. Since this project will be programmed in Java, and after considering how Java abstracts data into objects, the object oriented approach was chosen. The logical view is then represented through the use of UML class diagrams and class templates.  Internal behavior of an object can be described with state transition diagrams or state charts. \cite{4plus1view}
+
+\subsection{Development View}
+
+The development view describe the system from a programmers viewpoint, mainly through the use of UML Component diagram or a UML package diagram which we will use.  The development view is concerned with partitioning, grouping and visibility of software components. It also shows how external libraries fit into the picture (e.g. COTS). The quality attributes for this project, as specified in in the requirements document \cite{reqdoc} are modfiability, testability and usability\footnote{Usability is not so much emphasized as the two others.} The development view is closely related to these attributes, and serves as a vehicle of communication for stakeholders interested in these attributes.
+
+The development view adresses stakeholders such as the actual programmers doing the work, but can be important for the software managers responsible for coordinating and delegating tasks.
+
+To represent the development view, we will use a package diagram with an overview of all the packages and subpackages, displaying the overall structure of the system.

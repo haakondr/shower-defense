@@ -1,0 +1,208 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{natbib}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\title{\textbf{Action Hero Defense}\\\HRule\\Requirements Description\\ Group 23}
+\author{\and Håvard Geithus
+	\and  Sondre Løberg Sæter 
+	\and Nicolai Meltveit 
+	\and Hallvard Andreas Eriksen 
+	\and  Håkon Drolsum Røkenes}
+\date{\today}
+
+\begin{document}
+
+
+%\maketitle
+\input{./title.tex}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+This document contains the requirements for the game named \textsc{Warcraft TD}. For the sake of brevity, it will from this point on be referred to as \textit{the system} or \textit{the game}. Let's give it a short introduction. \\\\ The game belongs to a well known computer game genre which is called \textit{tower defence}. This is a subgenre of real-time strategy games where the goal is to try to stop enemies from crossing the map by building towers which shoot at them as they pass. Enemies and towers usually have varied abilities and costs. When an enemy is defeated, the player earns money or points, which are used to buy or upgrade towers. The gameplay is characterised by the positioning of static units by the player to defend against mobile enemy units who are trying to get from a start point to an end point. They try do so in a periodic fashion called \textit{waves}. Having played numerous games from this genre one realizes that the challenge of surviving contributes alot to the fun. If it's easy, then it's boring. Also the difficulty should increase in a somewhat linear fashion as waves are killed. Because of this, there will be a need to easily change the parts of the system from which the user experience manifests itself. This justifies the choice of the first quality attribute, namely \textit{modifiability}. Another important aspect of games are that they should behave in the same way between different playthroughs. Also the occurence of strange events due to faults will have a negative impact on gameplay. The system should therefore be easy to test to enable the development of a consistent gameplay experience. This justifies the second quality attribute; \textit{testability}. The third and last quality attribute is \textit{usability}. However, this will only be an implicit topic of this document.
+
+\section{Functional Requirements}
+Every requirement is given an ID so one can refer to it at a later point. In addition, every functional requirement is given a priority (\textsc{low}, \textsc{medium} or \textsc{high}). We partition the functional requirements into gameplay requirements and graphical user interface requirements.
+
+\subsection{Gameplay Requirements}
+\begin{itemize}
+\item \textbf{FR.1: Stop mobs using towers (Priority: High)}\\ Mobs\footnote{Plural, stands for Mobile Objects. Typically used in MMORPG games and stands for attackable non playing objects. Usually monsters.} will come streaming towards the goal, and the player should stop them before they arrive. To achieve this he must build defence towers. 
+\item \textbf{FR.2: Non-overlapping waves (Priority: High)}\\ The mobs come in waves. Before a wave can start, the previous wave has to be finished, that is; either killed or that the mobs have reached the goal.
+\item \textbf{FR.3: Next wave after time period (Priority: High)}\\ When a wave is finished, the next one will arrive when the player presses the \textit{start wave} button, or a certain time period has elapsed. 
+\item \textbf{FR.4: Increasing mob strength (Priority: Medium)}\\ The mobs become stronger every wave, and they can have different properties (e.g. armor type) and abilities (e.g. flying).
+\item \textbf{FR.5: Earning gold (Priority: High)}\\ The player earns gold by killing mobs and completing levels.
+\item \textbf{FR.6: Winning the game (Priority: Medium)}\\ In total there are 25 waves of mobs. If the player survives these he has completed the game.
+\item \textbf{FR.7: High score (Priority: Low)}\\ There are different high scores availible (e.g. shortest completion time, least number of mobs passed through.
+\item \textbf{FR.8: Player health (Priority: High)}\\ The player has 20 health poins (HP) and loses 1 HP for every mob that arrives at the goal.
+\item \textbf{FR.9: Damage test level (Priority: Low)}\\ After these 25 ordinary levels there will be a bonus level referred to as the \textit{damage test}, where an immensely powerful mob is let into the game. No one has ever slain it before.
+\item \textbf{FR.10: Upgradable towers (Priority: Low)}\\ Towers can be upgraded to increase its usefulness. There are 3 upgrade levels for every tower.
+\end{itemize}
+
+\subsection{Graphical user interface requirements}
+\begin{itemize}
+\item \textbf{FR.11: Menu for tower building (Priority: High)}\\ The tower buying menu contain all the different towers that can be built. The player presses the tower icon to bring up the menu, presses the icon of a tower (the menu then disappears automatically) then presses and releases his finger at the desired location on the map. This is where the tower is placed. The current player gold is updated. Note: If the tower is not affordable, then it's grayed out in the menu  and its cost is written in red numbers.
+\item \textbf{FR.12: Menu for selling and upgrading towers (Priority: Low)}\\ If the user presses one of his towers, a small tower action menu is shown. Here one can upgrade the tower or sell it. Note: if the tower is sold, then only a certain percentage of its purchase cost is returned to the player.
+\item \textbf{FR.13: Status bar (Priority: High)}\\ In the upper right corner there is an overview of current HP, resources (e.g. gold), score and time.
+\end{itemize}
+
+\clearpage
+
+\section{Quality Requirements}
+Having discussed the functional requirements of the system, it is now time to look at the system from another point of view, namely by its quality requirements. As noted earlier, the important quality requirements for this system are \textit{modifiability} and \textit{testability}. To chatacterize these requirements it is customary to use what is called quality attribute scenarios. They demonstrate what quality means for the system. Below follows an important selection of quality attribute scenarios given in tabular form. \\
+
+%To design an architecture that supports certain qualities, one must very carefully consider the mapping of the systems functionality onto software structur%es.
+
+\subsection{Modifiability}
+
+\subsubsection{Modifiability requirements}
+\begin{itemize}
+\item QR.1: Easy to change tower properties.
+\item QR.2: Adding/removing a tower to/from the game should be relatively easy.
+\item QR.3: Easy change enemy properties.
+\item QR.4: Adding/removing waves to/from the game should be relatively easy.
+\item QR.5: Simple, easy and fast to make new maps.
+\end{itemize}
+
+\subsubsection{Modifiability scenarios}
+
+\begin{tabular}{ l p{7cm} }
+\hline
+MS.1: & Changing tower properties\\
+\textbf{Portion of Scenario} & \textbf{Possible Values} \\
+\hline
+Source & Developer \\
+Stimulus & Wants to change some properties of a tower in the game (typically to tweak its behavior to improve gameplay or graphics). \\
+Artifact & Code \\
+Environment & At design time \\
+Response & Changes are made, and game still works \\
+Response Measure & Done within one hour \\
+\hline 
+\end{tabular}
+
+~\\\\
+
+\noindent \begin{tabular}{ l p{7cm} }
+\hline
+\textbf{Portion of Scenario} & \textbf{Possible Values} \\
+MS.2: & Adding new tower \\
+\hline
+Source & Developer  \\
+Stimulus & Wants to add a completely new tower (its attributes and graphics are given for all three upgrade levels). \\
+Artifact & Code \\
+Environment & At design time \\
+Response & Changes are made, and game still works \\
+Response Measure & Done within four hours \\
+\hline 
+\end{tabular}
+
+~\\\\
+
+\noindent \begin{tabular}{ l p{7cm} }
+\hline
+\textbf{Portion of Scenario} & \textbf{Possible Values} \\
+MS.3: & Adding map \\
+\hline
+Source & Developer  \\
+Stimulus & Wants to add a map to the game (using the Tiled editor). \\
+Artifact & Code \\
+Environment & At design time \\
+Response & The map is created using the Tiled Editor and it can be easily imported into the game \\
+Response Measure & Done within two hours (only complex maps should take two hours)  \\
+\hline 
+\end{tabular}
+
+~\\\\
+
+\noindent \subsection{Testability}
+
+\subsubsection{Testability requirements}
+\begin{itemize}
+\item QR.6: Easy to access component state (internal monitoring).
+\item QR.7: Log relevant information.
+\end{itemize}
+
+\subsubsection{Testability scenarios}
+\begin{tabular}{ l p{7cm} }
+\hline
+\textbf{Portion of Scenario} & \textbf{Possible Values} \\
+TS.1: & Testing status bar \\
+\hline
+Source & System tester \\
+Stimulus & Wants to test the status bar \\
+Artifact & The code \\
+Environment & At design time \\
+Response & Gets gold from killing enemies. Spends gold when purchasing towers or upgrades. \\
+Response Measure & The gold earned or spent should be correct (in accordance with the predefined value) \\
+\hline 
+\end{tabular}
+
+~\\\\
+
+\noindent \begin{tabular}{ l p{7cm} }
+\hline
+\textbf{Portion of Scenario} & \textbf{Possible Values} \\
+TS.2: & Starting game \\
+\hline
+Source & Player \\
+Stimulus & Wants to start a new game from the main menu \\
+Artifact & The game \\
+Environment & At testing time. The application itself is running. \\
+Response & The first level starts. \\
+Response Measure & Should not take more than 3 seconds. \\
+\hline 
+\end{tabular}
+
+~\\\\
+
+\noindent \begin{tabular}{ l p{7cm} }
+\hline
+\textbf{Portion of Scenario} & \textbf{Possible Values} \\
+TS.3: & Entering high score list \\
+\hline
+Source & Player \\
+Stimulus & Wants to get onto high score table \\
+Artifact & The game \\
+Environment & At testing time \\
+Response & Get through the whole game \\
+Response Measure & Get onto high score table (if good enough) \\
+\hline 
+\end{tabular}
+
+~\\\\
+
+\begin{tabular}{ l p{7cm} }
+\hline
+\textbf{Portion of Scenario} & \textbf{Possible Values} \\
+TS.4: & Building towers \\
+\hline
+Source & Player \\
+Stimulus & Wants to build a tower \\
+Artifact & The game \\
+Environment & At testing time \\
+Response & Tower is shown in the game \\
+Response Measure & Tower is functional (true/false) \\
+\hline 
+\end{tabular}
+
+
+\section{COTS (Commercial off-the-shelf)}
+When making applications for mobile clients running Andriod, there are certain constraints that one have to be aware of. These constraints are both the technical specifications of the clients and the fact that Android is, for us, a new platform. The specifications of the different clients running Android may also vary alot. Therefore we have to make it work over a range of models. There are for instance a limited amount of RAM availible. The HTC Hero, which many bought, has only 288MB RAM. The screen resolution is also a constraint we have to think about, since the Android phones have a screen resolution of about 320x480 \cite{htchero}. The newer phones have better specifications, but one shouldn't make the application only for the last generation of devices.
+
+Since the platform is new, there is alot to read up on. One can only learn so much, given limitations in time. We might also encounter constraints due to the sheep library that we are going to use when making this game.
+
+\section{Issues}
+No issues as of now.
+
+\section{Changes}
+Fixed misspelling on front page. Defined IDs for all requirements and scenarios. Assigned priorities to every functional requirement.
+
+\bibliographystyle{plain}
+\bibliography{ref}
+
+\end{document}

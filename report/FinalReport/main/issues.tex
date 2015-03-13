@@ -1,0 +1,35 @@
+\subsection{Threading}\label{threading}
+When an Android application starts, it creates a main UI thread, which is in charge of changing and controlling the view. It is important to avoid doing performance heavy calculations in this thread, since this would prevent the game from running smoothly.\cite{android:threading} 
+
+As a response to this, the game runs a separate thread which controls game logics. The game thread is created with the Sheep library, which is started when a Game object is created. Since the application runs in separate threads, there were issues with concurrent modifications to objects modifying the view. Especially when creating a new tower, there were issues. When creating a tower, an ArrayList of towers was appended. At the same time, the tower list was iterated through to check if they should shoot enemies or not. 
+If an ArrayList is iterated through, and changed during the iteration, a ConcurrentModificationException may occour.\cite{CME} 
+
+This problem was solved by using a SynchronizedList for towers, and synchronizing on this list during iterations. This makes sure the iteration is done mutually exclusive, thus allowing only one thread to access the list at the time.\cite{synclist} 
+
+\subsection{Performance}
+While not being one of the chosen quality attributes for this project, performance is always an issue which should be taken into consideration. The game does not suffer any noticable performance issues, but one issue may arise in the future: due to the threading issues explained in section \ref{threading}, access to the tower and enemy lists is locked to one thread at the time. These two lists are iterated through frequently, and may cause the UI thread to wait.
+
+With current functionality, no performance issues have been detected, so this is not really an issue. It is still important to raise the concern, and keep to this in mind when further developing the game.
+
+\subsection{Game Balance}
+Balancing the game is not a priority, but the game still needs to be balanced to be playable. The different variables which affect game balance are:
+
+\begin{enumerate}
+	\item variabels which affect how hard it is to survive a wave
+	\begin{enumerate}
+		\item Amount of enemies in wave
+		\item Healthpoints of enemies in wave
+		\item Tower damage
+		\item Tower range
+	\end{enumerate}
+	\item Variables which affect economy
+	\begin{enumerate}
+		\item Reward for killing enemy
+		\item Amount of enemies in wave
+		\item Starting money
+		\item Tower costs
+	\end{enumerate}
+\end{enumerate}
+
+When the game progresses, the player can afford more and more towers. The difficulty should therefore increase more and more as the game progresses, and finding a good balance after the 3rd wave will require extensive testing and balance tweaking.
+

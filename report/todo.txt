@@ -1,0 +1,25 @@
+﻿todolist:
+
+Fix noen unit tests
+
+bugs:
+noe bug når man avslutter spillet og skal åpne på nytt (må avslutte/pause game/state)
+Game blir initialisert hver gang man kaller oncreate, dvs om man trykker "play", starter spill, trykker tilbake, trykker "play" igjen, vil man ha 2 game tråder som kjører samtidig. ikke veldig heldig når vi oppdaterer samme statiske GameHandler metode for liv osv.
+
+
+feature:
+ikke mulig å scrolle ut av mappet - Håkon
+balance tweaking
+nico: flere waves
+nico: fiks pause mellom waves
+(lyder)
+(highscore lagring, helst ved bruk av SQlite for å lagre)
+omstrukturer touch funksjonalitet i egen klasse - Håkon.
+
+
+Implementation rapport
+fix overview.pdf under game description
+
+
+architectural report:
+process view ?

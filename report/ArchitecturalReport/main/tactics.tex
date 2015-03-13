@@ -1,0 +1,115 @@
+\label{tactics}
+To achieve the desired quality attributes one can apply tactics. Tactics are design options that can be taken to achieve qualities. In this chapter we will present tactics for all attributes, including the ones we have our main focus on, which are modifiability, testability and usability. 
+
+\subsection{Modifiability}
+The modifiability attribute concerns how easy it is to make changes to the system. The main concern is how much a change is going to cost in terms of extra work needed to be done to make this change functional. A change scenario consists of the following factors:
+
+\begin{itemize}
+
+	\item Source - the person that wants to make the change
+	\item Stimulus - the change the source wants to perform
+	\item Artifact - what the source wants to change
+	\item Environment - when this change shall be performed
+	\item Response - what response
+	\item Response measure - how much this change will cost, in regards to money and elements affected
+\end{itemize}
+
+After this has been specified one has to design, implement, test and deploy the change. In regards to this the extent of modifiability will determine how much this operation will cost. By employing the following tactics one can increase the modifiability: 
+
+\begin{itemize}
+	\item Localizing changes - divide the responsibilities to modules during design so changes will be limited to that module
+        \begin{itemize}
+	\item Generalize the module - make the module able to provide more functions based on different inputs by making it more generalized. This can for example be achieved by using the Abstract Factory pattern
+	\item Minimize dependencies - if modules are less dependent of each other, they will not be as affected by changes
+	\end{itemize}
+	\item Platform independent - make the game able to run on several different versions of Android
+	\item Single responsibility principle - make one module responsible for one function. If it is responsible for more than one function, divide the module into several classes, with one responsibility for each class
+	\item Clean code - write the implementation in clean code, which is easy to understand and unambiguous
+	\item Documentation - provide good documentation and commenting of the code to ease the job for other programmers
+	
+	\item Prevention of ripple effects - prevent changes on one module from affecting the entire system.
+        \begin{itemize}
+	\item Hide information - use encapsulation to keep information in different modules invisible to each other
+	\item Restrict communication paths - use of encapsulation will help in restricting communication paths, resulting in less interaction between the modules in cases of errors
+        \end{itemize}
+\end{itemize}
+
+
+\subsection{Testability}
+The testability attribute concerns how easy the system is to test and how much the testing process will cost. Testing is usually a big resource drain, but at the same time such a crucial part of the system creation process that it cannot be neglected. The key is to make testing less expensive by ensuring good testability for the system. The goal of the testability tactics is to make a system testable, by making it possible to control the internal states and inputs of the components and observe the outputs \cite{bass2003software}. Tactics one can employ to achieve good testability are: 
+
+\begin{itemize}
+	\item Input/Output handling
+        \begin{itemize}
+	\item Separate the different types of components - keep components such as logic, view, models separate which will make writing tests for specific parts much easier. Separation of interfaces from the system will make testing by code insertion possible without affecting the whole system.
+	\item Keeping classes at low complexity - smaller classes will also make the test classes smaller and easier to write. Makes testing of specific parts of the system easy.
+	\item Console output - write outputs to the console to check if modules give the expected results.
+	\end{itemize}
+    
+	\item Internal monitoring
+        \begin{itemize}	
+        \item Employ logging - makes it possible to observe the inputs and outputs of components so one can check after a test if it has been performed as expected.
+        \end{itemize}
+	\item Use COTS - use testing COTS(Commercial, Off-The-Shelf).
+\end{itemize}
+
+
+\subsection{Usability}
+Usability describes how easy and user friendly the system is the for the end user. Any system which has an end-user as a stakeholder should take usability into consideration. The importance of usability depends on how important the end-user is for the system. Usability tactics can be divided into two types, to support to categories of users. The first category is called runtime and includes those that support the user during system execution. The second category is design-time and supports the interface developers.\cite{bass2003software} For runtime the follow tactics are provided:
+
+\begin{itemize}
+	\item Abstract errors from the user - abstract error messages from the user interface in such a way that the user never knows if anything went wrong, in cases the error is fixed without any problems.
+	\item Maintain models - the application should maintain models of the task, the user and the system, to make handling events easier by keeping the interacting parts separate.
+\end{itemize}
+
+Design-time tactics are:
+
+\begin{itemize}
+	\item Separate the user interface from the rest of the application - one can apply an architectural pattern such as MVC to separate the GUI modules from the logic. This will make changes to the user interface easier to implement.
+\end{itemize}
+
+\subsection{Availability}
+Availability is concerned with how accessible the system is at all times that is, how big the consequences of a system failure is. It is important to distinguish between faults and failures. A fault may become a failure if not corrected, and a failure is observable by the system's user and a fault is not\cite{bass2003software}. The key tactics to ensuring good availability are: 
+
+\begin{itemize}
+	\item Fault detection - faults in the system are detected and reported to the other parts.
+        \begin{itemize}
+	\item Ping/echo - the system can ping a process to see if it is alive and functional.
+	\item Throw exceptions - the system can detect errors by having failing processes that fail call exceptions.
+	\end{itemize}
+	\item Fault recovery - the system should be able to recover as fast/good as possible after a fault has happened.
+        \begin{itemize}
+	\item Checkpoint/rollback - the system should be able to enter a previous consistent state if a fault should occur.
+	\end{itemize}
+	\item Fault prevention - faults should be prevented, and their effects should be isolated from the rest of the system.
+\end{itemize}
+
+
+\subsection{Performance}
+Performance is concerned with how efficient the system is at resource handling and event processing. The key tactics to improve performance is to establish better use of the systems resources. Tactics included are:
+
+\begin{itemize}
+	\item Resource management - used to ensure concurrency, run separate threads.
+	\item Resource arbitration - used to provide scheduling of resources according to priority assignment.
+	\item Resource demand - used to reduce the resources needed and number of processed events.
+\end{itemize}
+
+\subsection{Security}
+Security is concerned with how resilient the system is towards unauthorized usage while still being able to provide its users with the intended services. Key tactics to ensure good security are:
+
+\begin{itemize}
+	\item Intrusion detection - detection of intrusion or attempts of intrusion in the system.
+	\item System recovery - the system should be able to recover after an attack has been made or prevented.
+	\item Ability to resist attacks - the system should be able to withstand attacks. 
+\end{itemize}
+
+A secure system is characterized by the following qualities:
+
+\begin{itemize}
+	\item Nonrepudiation - transaction cannot be denied by parties to it
+	\item Confidentiality - data and services are protected against attacks
+	\item Integrity - data and services are delivered as intended
+	\item Assurance - correct parties of a transaction
+	\item Availability - available for legitimate use
+	\item Auditing - tracks activities in order to reconstruct them
+\end{itemize}

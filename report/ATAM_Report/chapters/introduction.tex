@@ -1,0 +1,56 @@
+In the Architecture Trade-off Analysis Method (ATAM) exercise we evaluate the architecture of the system of another group. The evaluation took place in one meeting, which where split into two phases; evaluation of our groups architecture, followed by an evaluation of the other group by our evaluation team.
+
+\subsection{Evaluation team}
+Our evaluaton team consisted of the following participants and assigned roles: \\Group 23: 
+\begin{itemize}
+    \item Hallvard Andreas Eriksen - Proceedings scribe: secretary and timekeeper, process observer.
+    \item Sondre Løberg Sæter - Scenario scribe
+    \item Nicolai Meltveit - Team and evaluation leader.
+    \item Håkon Røkenes - Documentation 
+    \item Håvard Geithus - Documentation \footnote{Participant 4 and 5; no role assigned during proceedings.}
+\end{itemize}
+
+\subsection{The group evaluated}
+This section will give a short introduction of the evaluated group and project.
+The group to be evaluated consisted of the following participants and assigned roles.
+Group 27:
+\begin{itemize}
+  \item Mads Holden - presenting business drivers
+  \item Danel Rampanelli - presenting the architecture
+\end{itemize}
+
+\subsubsection{Project description}
+The \emph{Ganja Farmer} system. Remake of an MS-DOS game, released in 1998. Gameplay consisting of controlling a soldier fighting against enemy soldiers, parachuting down.
+
+\subsubsection{Functional requirements}
+The functional requirements of the systems:
+\begin{itemize}
+\item Main character should be able to shoot down enemy soldiers before they land.
+\item Soldiers should come at an increasing tempo from the sky.
+\item If a soldier is allowed to land alive, he will set fire to one plant.
+\item When all plants are burned down, the game should end.
+\item The player is awarded points for each soldier killed.
+\item There should be a high score list.
+\item The game should look and feel like the original MS-DOS game.
+\end{itemize}
+
+\subsubsection{Main focus - attributes}
+
+The evaluated team has focused on the \emph{modifiability} and \emph{testability} quality attributes. The tactics the group has chosen to apply achieving  \textbf{modifiability:}
+\begin{itemize}
+\item Localizing changes (including semantic coherence, anticipate expected changes, generalizing of modules, limit possible options, abstracting common services).
+\item Preventing ripple effects (including hide information (encapsulation), maintain existing interfaces, restrict communication paths, use of intermediaries).
+\item Defer binding time (including runtime registration, configuration files, polymorphism, component replacement, adherence to protocols).
+\item Model-View-Controller architectural pattern.
+\item Event-driven architecture.
+\end{itemize}
+
+For \textbf{testability} the following tactics:
+\begin{itemize}
+\item Dependency injection.
+\item Model-View-Controller pattern (unit testing of model components).
+\end{itemize}
+
+Due to limited time and resouces the evaluaton session focused on the tactics \emph{polymorhpism} and \emph{Model-View-Controller} pattern for modifiability, in addition to \emph{dependency injection} and \emph{Model-View-Controller} for testability. Also, for the architectural approach evaluation, we suggested incorporating the Abstract Factory design pattern for increasing modifiability.
+
+

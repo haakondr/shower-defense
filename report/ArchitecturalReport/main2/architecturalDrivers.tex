@@ -1,0 +1,46 @@
+\label{drivers} The architectural drivers are the combination of functional, quality, business and technical requirements which shape the architecture of the system \cite{bass2003software}.These are contributing factors which help decide on the architectural tactics for the system.  
+In order to determine the drivers, one need to first identify the business goals of the system, then transform these goals into quality scenarios or use cases. 
+
+Architectural decisions mainly focus on avoiding unnecessary complexity. The drivers are based on the use cases which will cause the highest complexity, while being of high importance in order to achieve the business goals.
+
+In this section we will give an overview of the architectural drivers in our application. We will describe the tactics using 4 aspects; functional requirements, quality attribute requirements, business constraints and technical constraints.
+
+\subsection{Functional requirements}
+The following list contains the most important functional requirements that will shape the architecture of the system. The identification of each requirement is that from the requirements document\cite{reqdoc}.
+
+\begin{itemize}
+        \item \textbf{FR.1} Stop mobs using towers.
+        \item \textbf{FR.3} Next wave after a wave finishes.
+        \item \textbf{FR.4} Increasing mob strength.
+        \item \textbf{FR.5} Earning gold to build new towers.
+        \item \textbf{FR.6} Winning the game.
+        \item \textbf{FR.11} Menu for building towers.
+\end{itemize}
+
+\subsection{Quality attributes}
+Listed are the most important quality attributes for the architectural drivers. We will also here refer to the requirements described in the requirements document.
+
+\subsubsection{Modifiability}
+\begin{itemize}
+        \item Add, remove and changing towers and their properties (QR.1 through QR.4)
+        \item Easy to make new maps (QR.5).
+\end{itemize}
+
+\subsubsection{Testability}
+\begin{itemize}
+        \item Easy to access component state (QR.6)
+        \item Log relevant information (QR.7)
+\end{itemize}
+
+\subsection{Business constraints}
+\begin{itemize}
+        \item Important for the application not to require uneccesary and unnatural manifest permissions.\footnote{http://developer.android.com/reference/android/Manifest.permission.html} For instance contact information on the phone.
+        \item Use of software components under the GNU General Public License version 2 or later. Our system will have to released under this license. 
+\end{itemize}
+
+\subsection{Technical constraints}
+\begin{itemize}
+        \item None.
+\end{itemize}
+
+

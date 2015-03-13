@@ -1,0 +1,52 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[titles]{tocloft}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib} % eksempel til sitering: \cite{bass2003software}. referanser legges i ref.bib. Etter å ha oppdatert ref.bib må bibtex progArkDelivery1 kommando kjøres. 
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+
+%\newcommand{\HRule}{\rule{\linewidth}{0.3mm}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\title{\textbf{Action Hero Defense}\\\HRule\\Architectural Description\\ Group 23}
+\author{\and Håvard Geithus
+	\and  Sondre Løberg Sæter 
+	\and Nicolai Meltveit 
+	\and Hallvard Andreas Eriksen 
+	\and  Håkon Drolsum Røkenes}
+\date{\today}
+
+\begin{document}
+
+%\maketitle
+\input{./title.tex}
+
+
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+\input{main2/introduction}
+
+\section{Architectural Drivers}
+\input{main2/architecturalDrivers}
+\section{Stakeholders}
+\input{main2/stakeholders}
+\section{Architectural views}
+\input{main2/architecturalViews}
+\section{Tactics}
+\input{main2/tactics}
+\section{Patterns}
+\input{main2/patterns}
+\begin{verbatim}Øvrig TODO:
+Views:
+· A Process View is necessary.
+· Enough details like important methods and attributes should be included in the logic view to make a complete picture of the software.
+Consistency Among Views: Missing!
+Rationale: Missing.
+Issues: Missing
+\end{verbatim}
+
+\bibliographystyle{plain}
+\bibliography{ref}
+\end{document}

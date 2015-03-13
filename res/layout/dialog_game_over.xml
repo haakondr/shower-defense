@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/gameOverDialog" android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:layout_centerInParent="true" android:padding="30px">
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:orientation="horizontal">
+
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:src="@drawable/greedy_peon" />
+
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:id="@+id/tv_gameover" />
+
+		</LinearLayout>
+
+		<!--<EditText android:layout_width="350px" android:layout_height="wrap_content"
+			android:hint="name" android:id="@+id/editText_name" />
+		<Button android:layout_width="350px"
+			android:layout_height="wrap_content" android:id="@+id/btn_submitScore" android:text="@string/btn_submitScore"/>
+
+	--></LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,80 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[titles]{tocloft} 
+\usepackage[utf8]{inputenc}
+\usepackage{natbib} % eksempel til sitering: \cite{bass2003software}. referanser legges i ref.bib. Etter å ha oppdatert ref.bib må bibtex progArkDelivery1 kommando kjøres. 
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+
+%\newcommand{\HRule}{\rule{\linewidth}{0.3mm}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\title{\textbf{Action Hero Defense}\\\HRule\\Architectural Description\\ Group 23}
+\author{\and Håvard Geithus
+	\and  Sondre Løberg Sæter 
+	\and Nicolai Meltveit 
+	\and Hallvard Andreas Eriksen 
+	\and  Håkon Drolsum Røkenes}
+\date{\today}
+
+\begin{document}
+
+%\maketitle
+\input{./title.tex}
+\renewcommand\thepage{}
+
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+
+\renewcommand\thepage{\arabic{page}}
+\setcounter{page}{1}
+\section{Introduction}
+\input{main2/introduction}
+
+\section{Architectural Drivers}
+\input{main2/architecturalDrivers}
+\section{Stakeholders}
+\input{main2/stakeholders}
+\section{Selection of architectural viewpoints}
+\input{main2/selectionOfViewpoints}
+\section{Architectural views}
+\input{main2/architecturalViews}
+\section{Tactics}
+\input{main2/tactics}
+\section{Patterns}
+\input{main2/patterns}
+\section{Rationale}
+\input{main2/rationale}
+\section{Issues}
+\input{main2/issues}
+\section{Changes}
+\input{main2/changes}
+
+\clearpage
+\appendix
+\section{Diagrams}
+\subsection{Logical view}
+\begin{figure}[h!]
+  \center
+  \includegraphics[width=1\linewidth ]{images/tdclassdiagram} 
+  \caption{Class diagram for the logical view}
+  \label{fig:tdtowerdefense}
+\end{figure}
+\clearpage
+\subsection{Development View}
+\begin{figure}[h]
+\center
+\includegraphics[width=1\linewidth ]{images/packageDiagram}
+\label{fig:packagediagram}
+\caption{Package diagram}
+\end{figure}
+\begin{figure}[h]
+\includegraphics[width=1\linewidth]{images/abstractFactory.png}
+\caption{Class diagram of the abstract factory pattern}
+\label{fig:absfac}
+\end{figure}
+\clearpage
+\bibliographystyle{plain}
+\bibliography{ref}
+\end{document}
